@@ -7,14 +7,12 @@
 //
 
 #import "JKRSearchController.h"
-#import "JKRSearchControllerView.h"
 #import "UIView+JKRTouch.h"
 
 NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
 
 @interface JKRSearchController ()
 
-@property (nonatomic, strong) JKRSearchControllerView *searchBackgroundView;
 @property (nonatomic, strong) UIView *bgView;
 
 @end
@@ -25,10 +23,6 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
     self = [super init];
     self.searchResultsController = searchResultsController;
     return self;
-}
-
-- (void)loadView {
-    self.view = self.searchBackgroundView;
 }
 
 - (void)viewDidLoad {
@@ -93,14 +87,6 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
         [_bgView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endSearchTextFieldEditing)]];
     }
     return _bgView;
-}
-
-- (JKRSearchControllerView *)searchBackgroundView {
-    if (!_searchBackgroundView) {
-        _searchBackgroundView = [[JKRSearchControllerView alloc] init];
-        _searchBackgroundView.frame = [UIScreen mainScreen].bounds;
-    }
-    return _searchBackgroundView;
 }
 
 @end
