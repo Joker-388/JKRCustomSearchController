@@ -45,10 +45,10 @@ static NSString *const CellIdentifier = @"WEICHAT_ID";
 
 - (void)updateSearchResultsForSearchController:(JKRSearchController *)searchController {
     NSString *searchText = searchController.searchBar.text;
-    if (!(searchText.length > 0)) return;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF CONTAINS %@)", searchText];
     JKRSearchResultViewController *resultController = (JKRSearchResultViewController *)searchController.searchResultsController;
-    resultController.filterDataArray = [self.dataArray filteredArrayUsingPredicate:predicate];
+    if (!(searchText.length > 0)) resultController.filterDataArray = @[];
+    else resultController.filterDataArray = [self.dataArray filteredArrayUsingPredicate:predicate];
 }
 
 #pragma mark - lazy load
@@ -78,6 +78,10 @@ static NSString *const CellIdentifier = @"WEICHAT_ID";
         _dataArray = [JKRDataStore sharedStore].dataArray;
     }
     return _dataArray;
+}
+
+- (void)dealloc {
+    NSLog(@"Controller dealloc");
 }
 
 @end

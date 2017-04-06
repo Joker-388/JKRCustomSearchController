@@ -37,4 +37,8 @@ static NSString *const cellID = @"RESULT_CELL_ID";
     return cell;
 }
 
+- (void)dealloc {
+    NSLog(@"JKRSearchResultViewController dealloc");
+}
+
 @end

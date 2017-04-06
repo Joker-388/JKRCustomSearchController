@@ -7,6 +7,7 @@
 //
 
 #import "UINavigationBar+JKR_BackgroundColor.h"
+#import "UIView+JKRTouch.h"
 #import <objc/runtime.h>
 
 @implementation UINavigationBar (JKR_BackgroundColor)
@@ -15,6 +16,7 @@ static UIView *_jkr_backgroundView;
 
 + (void)load {
     _jkr_backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, kScreenWidth, 64)];
+    _jkr_backgroundView.unTouch = YES;
     method_exchangeImplementations(class_getInstanceMethod([UINavigationBar class], NSSelectorFromString(@"layoutSubviews")), class_getInstanceMethod([UINavigationBar class], @selector(jkr_layoutSubviews)));
 }
 

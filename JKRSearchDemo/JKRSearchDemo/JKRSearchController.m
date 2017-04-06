@@ -29,7 +29,6 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
     [super viewDidLoad];
     [self.view addSubview:self.bgView];
     self.view.unTouchRect = CGRectMake(0, 0, self.view.width, 64);
-    self.view.unTouch = NO;
     self.searchResultsController.view.frame = self.bgView.bounds;
     [self.bgView addSubview:self.searchResultsController.view];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endSearch) name:SEARCH_CANCEL_NOTIFICATION_KEY object:nil];
@@ -87,6 +86,11 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
         [_bgView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endSearchTextFieldEditing)]];
     }
     return _bgView;
+}
+
+- (void)dealloc {
+    [self.searchBar removeObserver:self forKeyPath:@"text"];
+    NSLog(@"JKRSearchController dealloc");
 }
 
 @end

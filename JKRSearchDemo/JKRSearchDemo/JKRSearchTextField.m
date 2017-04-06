@@ -25,4 +25,8 @@
     }
 }
 
+- (void)dealloc {
+    NSLog(@"JKRSearchTextField dealloc");
+}
+
 @end

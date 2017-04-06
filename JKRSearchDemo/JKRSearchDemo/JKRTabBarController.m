@@ -13,6 +13,8 @@
 #import "JKRFindViewController.h"
 #import "JKRMeViewController.h"
 
+#import "JKRTestViewController.h"
+
 @interface JKRTabBarController ()
 
 @end
@@ -35,6 +37,7 @@
 
 - (void)_addChildViewController {
     [self addChildViewController:[[JKRRootViewController alloc] init] withTitle:@"微信" image:[UIImage imageNamed:@"tabbar_mainframe"] selectedImage:[UIImage imageNamed:@"tabbar_mainframeHL"]];
+//    [self addChildViewController:[[JKRTestViewController alloc] init] withTitle:@"微信" image:[UIImage imageNamed:@"tabbar_mainframe"] selectedImage:[UIImage imageNamed:@"tabbar_mainframeHL"]];
     [self addChildViewController:[[JKRContactsViewController alloc] init] withTitle:@"通讯录" image:[UIImage imageNamed:@"tabbar_contacts"] selectedImage:[UIImage imageNamed:@"tabbar_contactsHL"]];
     [self addChildViewController:[[JKRFindViewController alloc] init] withTitle:@"发现" image:[UIImage imageNamed:@"tabbar_discover"] selectedImage:[UIImage imageNamed:@"tabbar_discoverHL"]];
     [self addChildViewController:[[JKRMeViewController alloc] init] withTitle:@"我" image:[UIImage imageNamed:@"tabbar_me"] selectedImage:[UIImage imageNamed:@"tabbar_meHL"]];

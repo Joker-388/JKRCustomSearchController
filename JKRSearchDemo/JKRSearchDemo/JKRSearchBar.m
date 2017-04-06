@@ -49,6 +49,7 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
         [self.searchTextField becomeFirstResponder];
     } else {
         self.searchTextField.text = @"";
+        self.text = @"";
         [UIView animateWithDuration:0.2 animations:^{
             self.searchTextField.x = kScreenWidth * 0.5 - 40;
             self.rightButton.x = kScreenWidth - 38;
@@ -98,6 +99,7 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
 - (void)rightButtonClick {
     if (self.searchTextField.text) {
         self.searchTextField.text = @"";
+        self.text = nil;
         [_rightButton setImage:[UIImage imageNamed:@"VoiceSearchStartBtn"] forState:UIControlStateNormal];
         [_rightButton setImage:[UIImage imageNamed:@"VoiceSearchStartBtnHL"] forState:UIControlStateHighlighted];
     }
@@ -157,6 +159,10 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
         [_cancelButton addTarget:self action:@selector(cancelButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
+}
+
+- (void)dealloc {
+    NSLog(@"JKRSearchBar dealloc");
 }
 
 @end

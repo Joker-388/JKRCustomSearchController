@@ -28,6 +28,7 @@
 		F3E6A89B1E94FD30008795DB /* JKRSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A89A1E94FD30008795DB /* JKRSearchResultViewController.m */; };
 		F3E6A89D1E94FD3A008795DB /* country.txt in Resources */ = {isa = PBXBuildFile; fileRef = F3E6A89C1E94FD3A008795DB /* country.txt */; };
 		F3E6A8A01E94FF3B008795DB /* JKRDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A89F1E94FF3B008795DB /* JKRDataStore.m */; };
+		F3F635261E9649AE0023D395 /* JKRTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F635251E9649AE0023D395 /* JKRTestViewController.m */; };
 		F3FCB4B21E94A82C00BDBE36 /* JKRSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCB4B11E94A82C00BDBE36 /* JKRSearchBar.m */; };
 		F3FCB4B51E94A87E00BDBE36 /* JKRSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCB4B41E94A87E00BDBE36 /* JKRSearchController.m */; };
 		F3FCB4BB1E94BE3500BDBE36 /* JKRSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCB4BA1E94BE3500BDBE36 /* JKRSearchTextField.m */; };
@@ -94,6 +95,8 @@
 		F3E6A89C1E94FD3A008795DB /* country.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = country.txt; sourceTree = "<group>"; };
 		F3E6A89E1E94FF3B008795DB /* JKRDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKRDataStore.h; sourceTree = "<group>"; };
 		F3E6A89F1E94FF3B008795DB /* JKRDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKRDataStore.m; sourceTree = "<group>"; };
+		F3F635241E9649AE0023D395 /* JKRTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKRTestViewController.h; sourceTree = "<group>"; };
+		F3F635251E9649AE0023D395 /* JKRTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKRTestViewController.m; sourceTree = "<group>"; };
 		F3FCB4B01E94A82C00BDBE36 /* JKRSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKRSearchBar.h; sourceTree = "<group>"; };
 		F3FCB4B11E94A82C00BDBE36 /* JKRSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKRSearchBar.m; sourceTree = "<group>"; };
 		F3FCB4B31E94A87E00BDBE36 /* JKRSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKRSearchController.h; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				055A06371E93B09E00025BDE /* JKRRootViewController.m */,
 				F3E6A8991E94FD30008795DB /* JKRSearchResultViewController.h */,
 				F3E6A89A1E94FD30008795DB /* JKRSearchResultViewController.m */,
+				F3F635241E9649AE0023D395 /* JKRTestViewController.h */,
+				F3F635251E9649AE0023D395 /* JKRTestViewController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				F34D52C61E95E36500B458B7 /* UIView+JKRTouch.m in Sources */,
 				055A06481E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m in Sources */,
 				055A064B1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m in Sources */,
+				F3F635261E9649AE0023D395 /* JKRTestViewController.m in Sources */,
 				F3FCB4B51E94A87E00BDBE36 /* JKRSearchController.m in Sources */,
 				055A05FF1E93AD7800025BDE /* main.m in Sources */,
 				F3E6A88F1E94D367008795DB /* UIView+JKRViewController.m in Sources */,
