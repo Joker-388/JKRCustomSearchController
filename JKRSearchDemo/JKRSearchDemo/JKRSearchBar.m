@@ -50,6 +50,8 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
     } else {
         self.searchTextField.text = @"";
         self.text = @"";
+        [_rightButton setImage:[UIImage imageNamed:@"VoiceSearchStartBtn"] forState:UIControlStateNormal];
+        [_rightButton setImage:[UIImage imageNamed:@"VoiceSearchStartBtnHL"] forState:UIControlStateHighlighted];
         [UIView animateWithDuration:0.2 animations:^{
             self.searchTextField.x = kScreenWidth * 0.5 - 40;
             self.rightButton.x = kScreenWidth - 38;
