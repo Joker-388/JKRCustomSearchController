@@ -51,10 +51,6 @@ static NSString *const CellIdentifier = @"WEICHAT_ID";
     resultController.filterDataArray = [self.dataArray filteredArrayUsingPredicate:predicate];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"%@", NSStringFromCGRect(scrollView.bounds));
-}
-
 #pragma mark - lazy load
 - (UITableView *)tableView {
     if (!_tableView) {
