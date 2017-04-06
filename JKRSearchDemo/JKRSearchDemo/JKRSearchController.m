@@ -8,6 +8,7 @@
 
 #import "JKRSearchController.h"
 #import "JKRSearchControllerView.h"
+#import "UIView+JKRTouch.h"
 
 NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
 
@@ -33,6 +34,8 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.bgView];
+    self.view.unTouchRect = CGRectMake(0, 0, self.view.width, 64);
+    self.view.unTouch = NO;
     self.searchResultsController.view.frame = self.bgView.bounds;
     [self.bgView addSubview:self.searchResultsController.view];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endSearch) name:SEARCH_CANCEL_NOTIFICATION_KEY object:nil];

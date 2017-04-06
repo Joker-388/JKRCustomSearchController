@@ -22,6 +22,7 @@
 		055A06441E93BB4600025BDE /* JKRMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055A06431E93BB4600025BDE /* JKRMeViewController.m */; };
 		055A06481E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 055A06471E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m */; };
 		055A064B1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 055A064A1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m */; };
+		F34D52C61E95E36500B458B7 /* UIView+JKRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = F34D52C51E95E36500B458B7 /* UIView+JKRTouch.m */; };
 		F3E6A88F1E94D367008795DB /* UIView+JKRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A88E1E94D367008795DB /* UIView+JKRViewController.m */; };
 		F3E6A8951E94E838008795DB /* UIView+JKR_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A8941E94E838008795DB /* UIView+JKR_Frame.m */; };
 		F3E6A8981E94FA9B008795DB /* JKRSearchControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A8971E94FA9B008795DB /* JKRSearchControllerView.m */; };
@@ -83,6 +84,8 @@
 		055A06471E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JKR_BackgroundColor.m"; sourceTree = "<group>"; };
 		055A06491E95231900025BDE /* UIViewController+JKRStatusBarHidden.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKRStatusBarHidden.h"; sourceTree = "<group>"; };
 		055A064A1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKRStatusBarHidden.m"; sourceTree = "<group>"; };
+		F34D52C41E95E36500B458B7 /* UIView+JKRTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRTouch.h"; sourceTree = "<group>"; };
+		F34D52C51E95E36500B458B7 /* UIView+JKRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRTouch.m"; sourceTree = "<group>"; };
 		F3E6A88D1E94D367008795DB /* UIView+JKRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRViewController.h"; sourceTree = "<group>"; };
 		F3E6A88E1E94D367008795DB /* UIView+JKRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRViewController.m"; sourceTree = "<group>"; };
 		F3E6A8931E94E838008795DB /* UIView+JKR_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKR_Frame.h"; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 				F3E6A8941E94E838008795DB /* UIView+JKR_Frame.m */,
 				055A06491E95231900025BDE /* UIViewController+JKRStatusBarHidden.h */,
 				055A064A1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m */,
+				F34D52C41E95E36500B458B7 /* UIView+JKRTouch.h */,
+				F34D52C51E95E36500B458B7 /* UIView+JKRTouch.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -348,7 +353,7 @@
 		055A05F21E93AD7800025BDE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Lucky;
 				TargetAttributes = {
 					055A05F91E93AD7800025BDE = {
@@ -425,6 +430,7 @@
 				F3E6A89B1E94FD30008795DB /* JKRSearchResultViewController.m in Sources */,
 				055A063B1E93BB2000025BDE /* JKRTabBarController.m in Sources */,
 				F3FCB4B21E94A82C00BDBE36 /* JKRSearchBar.m in Sources */,
+				F34D52C61E95E36500B458B7 /* UIView+JKRTouch.m in Sources */,
 				055A06481E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m in Sources */,
 				055A064B1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m in Sources */,
 				F3FCB4B51E94A87E00BDBE36 /* JKRSearchController.m in Sources */,
@@ -502,6 +508,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -549,6 +556,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

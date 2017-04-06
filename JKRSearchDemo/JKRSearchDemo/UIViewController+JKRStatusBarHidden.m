@@ -12,13 +12,13 @@
 @implementation UIViewController (JKRStatusBarHidden)
 
 - (void)setJkr_lightStatusBar:(BOOL)jkr_lightStatusBar {
-    objc_setAssociatedObject(self, @"STATUS_LIGHT", [NSNumber numberWithInt:jkr_lightStatusBar], OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @"JKR_STATUS_LIGHT", [NSNumber numberWithInt:jkr_lightStatusBar], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self preferredStatusBarStyle];
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (BOOL)jkr_lightStatusBar {
-    return objc_getAssociatedObject(self, @"STATUS_LIGHT") ? [objc_getAssociatedObject(self, @"STATUS_LIGHT") boolValue] : NO;
+    return objc_getAssociatedObject(self, @"JKR_STATUS_LIGHT") ? [objc_getAssociatedObject(self, @"JKR_STATUS_LIGHT") boolValue] : NO;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
