@@ -11,7 +11,7 @@
 #import "JKRSearchResultViewController.h"
 #import "JKRDataStore.h"
 
-@interface JKRRootViewController ()<UITableViewDataSource, UITableViewDelegate, JKRSearchControllerhResultsUpdating>
+@interface JKRRootViewController ()<UITableViewDataSource, UITableViewDelegate, JKRSearchControllerhResultsUpdating, JKRSearchControllerDelegate, JKRSearchBarDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) JKRSearchController *searchController;
@@ -43,12 +43,43 @@ static NSString *const CellIdentifier = @"WEICHAT_ID";
     return cell;
 }
 
+#pragma mark - JKRSearchControllerhResultsUpdating
 - (void)updateSearchResultsForSearchController:(JKRSearchController *)searchController {
     NSString *searchText = searchController.searchBar.text;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF CONTAINS %@)", searchText];
     JKRSearchResultViewController *resultController = (JKRSearchResultViewController *)searchController.searchResultsController;
     if (!(searchText.length > 0)) resultController.filterDataArray = @[];
     else resultController.filterDataArray = [self.dataArray filteredArrayUsingPredicate:predicate];
+}
+
+#pragma mark - JKRSearchControllerDelegate
+- (void)willPresentSearchController:(JKRSearchController *)searchController {
+    NSLog(@"willPresentSearchController, %@", searchController);
+}
+
+- (void)didPresentSearchController:(JKRSearchController *)searchController {
+    NSLog(@"didPresentSearchController, %@", searchController);
+}
+
+- (void)willDismissSearchController:(JKRSearchController *)searchController {
+    NSLog(@"willDismissSearchController, %@", searchController);
+}
+
+- (void)didDismissSearchController:(JKRSearchController *)searchController {
+    NSLog(@"didDismissSearchController, %@", searchController);
+}
+
+#pragma mark - JKRSearchBarDelegate
+- (void)searchBarTextDidBeginEditing:(JKRSearchBar *)searchBar {
+    NSLog(@"searchBarTextDidBeginEditing %@", searchBar);
+}
+
+- (void)searchBarTextDidEndEditing:(JKRSearchBar *)searchBar {
+    NSLog(@"searchBarTextDidEndEditing %@", searchBar);
+}
+
+- (void)searchBar:(JKRSearchBar *)searchBar textDidChange:(NSString *)searchText {
+    NSLog(@"searchBar:%@ textDidChange:%@", searchBar, searchText);
 }
 
 #pragma mark - lazy load
@@ -69,6 +100,8 @@ static NSString *const CellIdentifier = @"WEICHAT_ID";
         _searchController.searchBar.placeholder = @"搜索";
         _searchController.hidesNavigationBarDuringPresentation = YES;
         _searchController.searchResultsUpdater = self;
+        _searchController.searchBar.delegate = self;
+        _searchController.delegate = self;
     }
     return _searchController;
 }

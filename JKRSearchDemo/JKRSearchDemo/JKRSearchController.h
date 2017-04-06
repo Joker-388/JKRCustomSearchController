@@ -12,7 +12,6 @@
 
 @protocol JKRSearchControllerDelegate <NSObject>
 
-/// 未完成
 @optional
 - (void)willPresentSearchController:(JKRSearchController *)searchController;
 - (void)didPresentSearchController:(JKRSearchController *)searchController;
@@ -32,6 +31,7 @@
 
 @property (nonatomic, strong) JKRSearchBar *searchBar;
 @property (nonatomic, assign) BOOL hidesNavigationBarDuringPresentation;
+@property (nonatomic, weak) id<JKRSearchControllerDelegate> delegate;
 @property (nonatomic, weak) id<JKRSearchControllerhResultsUpdating> searchResultsUpdater;
 @property (nonatomic, strong) UIViewController *searchResultsController;
 

@@ -63,6 +63,12 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
     }
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if ([self.delegate respondsToSelector:@selector(searchBarTextDidBeginEditing:)]) {
+        [self.delegate searchBarTextDidBeginEditing:self];
+    }
+}
+
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
     [UIView animateWithDuration:0.3 animations:^{
         self.searchTextField.x = kScreenWidth * 0.5 - 40;
@@ -81,7 +87,16 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
     return YES;
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if ([self.delegate respondsToSelector:@selector(searchBarTextDidEndEditing:)]) {
+        [self.delegate searchBarTextDidEndEditing:self];
+    }
+}
+
 - (void)textFieldDidChange {
+    if ([self.delegate respondsToSelector:@selector(searchBar:textDidChange:)]) {
+        [self.delegate searchBar:self textDidChange:self.searchTextField.text];
+    }
     self.text = self.searchTextField.text;
     if (self.searchTextField.text.length) {
         [_rightButton setImage:[UIImage imageNamed:@"card_delete"] forState:UIControlStateNormal];

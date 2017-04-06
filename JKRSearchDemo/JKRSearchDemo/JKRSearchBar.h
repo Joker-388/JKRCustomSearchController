@@ -12,10 +12,9 @@
 @protocol JKRSearchBarDelegate <NSObject>
 
 @optional
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar;
-- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar;
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar;
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchTex;
+- (void)searchBarTextDidBeginEditing:(JKRSearchBar *)searchBar;
+- (void)searchBarTextDidEndEditing:(JKRSearchBar *)searchBar;
+- (void)searchBar:(JKRSearchBar *)searchBar textDidChange:(NSString *)searchText;
 
 @end
 
