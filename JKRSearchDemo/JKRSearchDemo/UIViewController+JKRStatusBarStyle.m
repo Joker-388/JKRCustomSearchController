@@ -1,15 +1,16 @@
+
 //
-//  UIViewController+JKRStatusBarHidden.m
+//  UIViewController+JKRStatusBarStyle.m
 //  JKRSearchDemo
 //
-//  Created by Lucky on 2017/4/5.
+//  Created by Joker on 2017/4/7.
 //  Copyright © 2017年 Lucky. All rights reserved.
 //
 
-#import "UIViewController+JKRStatusBarHidden.h"
+#import "UIViewController+JKRStatusBarStyle.h"
 #import <objc/runtime.h>
 
-@implementation UIViewController (JKRStatusBarHidden)
+@implementation UIViewController (JKRStatusBarStyle)
 
 - (void)setJkr_lightStatusBar:(BOOL)jkr_lightStatusBar {
     objc_setAssociatedObject(self, @"JKR_STATUS_LIGHT", [NSNumber numberWithInt:jkr_lightStatusBar], OBJC_ASSOCIATION_RETAIN_NONATOMIC);

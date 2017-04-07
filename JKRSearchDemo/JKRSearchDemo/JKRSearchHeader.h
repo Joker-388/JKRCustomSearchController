@@ -48,6 +48,6 @@
 
 #import "UIView+JKRViewController.h"
 #import "UIView+JKR_Frame.h"
-#import "UIViewController+JKRStatusBarHidden.h"
+#import "UIViewController+JKRStatusBarStyle.h"
 
 #endif /* JKRSearchHeader_h */

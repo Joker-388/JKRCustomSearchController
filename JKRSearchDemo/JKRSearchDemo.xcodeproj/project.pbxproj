@@ -21,8 +21,8 @@
 		055A06411E93BB3F00025BDE /* JKRFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055A06401E93BB3F00025BDE /* JKRFindViewController.m */; };
 		055A06441E93BB4600025BDE /* JKRMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055A06431E93BB4600025BDE /* JKRMeViewController.m */; };
 		055A06481E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 055A06471E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m */; };
-		055A064B1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 055A064A1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m */; };
 		F34D52C61E95E36500B458B7 /* UIView+JKRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = F34D52C51E95E36500B458B7 /* UIView+JKRTouch.m */; };
+		F35DF97C1E97252900DB5E46 /* UIViewController+JKRStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F35DF97B1E97252900DB5E46 /* UIViewController+JKRStatusBarStyle.m */; };
 		F3E6A88F1E94D367008795DB /* UIView+JKRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A88E1E94D367008795DB /* UIView+JKRViewController.m */; };
 		F3E6A8951E94E838008795DB /* UIView+JKR_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A8941E94E838008795DB /* UIView+JKR_Frame.m */; };
 		F3E6A89B1E94FD30008795DB /* JKRSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A89A1E94FD30008795DB /* JKRSearchResultViewController.m */; };
@@ -82,10 +82,10 @@
 		055A06451E93BD4100025BDE /* JKRSearchHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRSearchHeader.h; sourceTree = "<group>"; };
 		055A06461E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+JKR_BackgroundColor.h"; sourceTree = "<group>"; };
 		055A06471E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JKR_BackgroundColor.m"; sourceTree = "<group>"; };
-		055A06491E95231900025BDE /* UIViewController+JKRStatusBarHidden.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKRStatusBarHidden.h"; sourceTree = "<group>"; };
-		055A064A1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKRStatusBarHidden.m"; sourceTree = "<group>"; };
 		F34D52C41E95E36500B458B7 /* UIView+JKRTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRTouch.h"; sourceTree = "<group>"; };
 		F34D52C51E95E36500B458B7 /* UIView+JKRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRTouch.m"; sourceTree = "<group>"; };
+		F35DF97A1E97252900DB5E46 /* UIViewController+JKRStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKRStatusBarStyle.h"; sourceTree = "<group>"; };
+		F35DF97B1E97252900DB5E46 /* UIViewController+JKRStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKRStatusBarStyle.m"; sourceTree = "<group>"; };
 		F3E6A88D1E94D367008795DB /* UIView+JKRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRViewController.h"; sourceTree = "<group>"; };
 		F3E6A88E1E94D367008795DB /* UIView+JKRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRViewController.m"; sourceTree = "<group>"; };
 		F3E6A8931E94E838008795DB /* UIView+JKR_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKR_Frame.h"; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 				F3E6A88E1E94D367008795DB /* UIView+JKRViewController.m */,
 				F3E6A8931E94E838008795DB /* UIView+JKR_Frame.h */,
 				F3E6A8941E94E838008795DB /* UIView+JKR_Frame.m */,
-				055A06491E95231900025BDE /* UIViewController+JKRStatusBarHidden.h */,
-				055A064A1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m */,
+				F35DF97A1E97252900DB5E46 /* UIViewController+JKRStatusBarStyle.h */,
+				F35DF97B1E97252900DB5E46 /* UIViewController+JKRStatusBarStyle.m */,
 				F34D52C41E95E36500B458B7 /* UIView+JKRTouch.h */,
 				F34D52C51E95E36500B458B7 /* UIView+JKRTouch.m */,
 			);
@@ -431,8 +431,8 @@
 				F3FCB4B21E94A82C00BDBE36 /* JKRSearchBar.m in Sources */,
 				F34D52C61E95E36500B458B7 /* UIView+JKRTouch.m in Sources */,
 				055A06481E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m in Sources */,
-				055A064B1E95231900025BDE /* UIViewController+JKRStatusBarHidden.m in Sources */,
 				F3F635261E9649AE0023D395 /* JKRTestViewController.m in Sources */,
+				F35DF97C1E97252900DB5E46 /* UIViewController+JKRStatusBarStyle.m in Sources */,
 				F3FCB4B51E94A87E00BDBE36 /* JKRSearchController.m in Sources */,
 				055A05FF1E93AD7800025BDE /* main.m in Sources */,
 				F3E6A88F1E94D367008795DB /* UIView+JKRViewController.m in Sources */,
