@@ -16,19 +16,19 @@
 }
 
 - (void)setUnTouch:(BOOL)unTouch {
-    objc_setAssociatedObject(self, @"JKR_UN_TOUCH", [NSNumber numberWithInt:unTouch], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, "JKR_UN_TOUCH", [NSNumber numberWithInt:unTouch], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (BOOL)unTouch {
-    return objc_getAssociatedObject(self, @"JKR_UN_TOUCH") ? [objc_getAssociatedObject(self, @"JKR_UN_TOUCH") boolValue] : NO;
+    return objc_getAssociatedObject(self, "JKR_UN_TOUCH") ? [objc_getAssociatedObject(self, "JKR_UN_TOUCH") boolValue] : NO;
 }
 
 - (void)setUnTouchRect:(CGRect)unTouchRect {
-    objc_setAssociatedObject(self, @"JKR_UN_TOUCH_RECT", [NSValue valueWithCGRect:unTouchRect], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, "JKR_UN_TOUCH_RECT", [NSValue valueWithCGRect:unTouchRect], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (CGRect)unTouchRect {
-    return objc_getAssociatedObject(self, @"JKR_UN_TOUCH_RECT") ? [objc_getAssociatedObject(self, @"JKR_UN_TOUCH_RECT") CGRectValue] : CGRectZero;
+    return objc_getAssociatedObject(self, "JKR_UN_TOUCH_RECT") ? [objc_getAssociatedObject(self, "JKR_UN_TOUCH_RECT") CGRectValue] : CGRectZero;
 }
 
 - (BOOL)jkr_pointInside:(CGPoint)point withEvent:(UIEvent *)event {
