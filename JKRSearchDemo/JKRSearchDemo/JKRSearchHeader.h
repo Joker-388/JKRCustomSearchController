@@ -8,7 +8,9 @@
 
 #ifndef JKRSearchHeader_h
 #define JKRSearchHeader_h
-
+#import "UIColor+JKRColor.h"
+#define JKRColor(r,g,b,a) [UIColor jkr_colorWithRed:r green:g blue:b alpha:a]
+#define JKRColorHex(_hex_) [UIColor jkr_colorWithHexString:((__bridge NSString *)CFSTR(#_hex_))]
 #ifndef weakify
 #if DEBUG
 #if __has_feature(objc_arc)
@@ -43,8 +45,6 @@
 
 #define kScreenWidth [[UIScreen mainScreen] bounds].size.width
 #define kScreenHeight [[UIScreen mainScreen] bounds].size.height
-
-#define JKRColor(r,g,b,a) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a]
 
 #import "UIView+JKRViewController.h"
 #import "UIView+JKR_Frame.h"

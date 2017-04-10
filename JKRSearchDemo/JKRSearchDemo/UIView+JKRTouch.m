@@ -11,24 +11,27 @@
 
 @implementation UIView (JKRTouch)
 
+static const char * JKR_UN_TOUCH_KEY = "JKR_UN_TOUCH";
+static const char * JKR_UN_TOUCH_RECT_KEY = "JKR_UN_TOUCH_RECT";
+
 + (void)load {
     method_exchangeImplementations(class_getInstanceMethod([UIView class], @selector(pointInside:withEvent:)), class_getInstanceMethod([UIView class], @selector(jkr_pointInside:withEvent:)));
 }
 
 - (void)setUnTouch:(BOOL)unTouch {
-    objc_setAssociatedObject(self, "JKR_UN_TOUCH", [NSNumber numberWithInt:unTouch], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, JKR_UN_TOUCH_KEY, [NSNumber numberWithInt:unTouch], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (BOOL)unTouch {
-    return objc_getAssociatedObject(self, "JKR_UN_TOUCH") ? [objc_getAssociatedObject(self, "JKR_UN_TOUCH") boolValue] : NO;
+    return objc_getAssociatedObject(self, JKR_UN_TOUCH_KEY) ? [objc_getAssociatedObject(self, JKR_UN_TOUCH_KEY) boolValue] : NO;
 }
 
 - (void)setUnTouchRect:(CGRect)unTouchRect {
-    objc_setAssociatedObject(self, "JKR_UN_TOUCH_RECT", [NSValue valueWithCGRect:unTouchRect], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, JKR_UN_TOUCH_RECT_KEY, [NSValue valueWithCGRect:unTouchRect], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (CGRect)unTouchRect {
-    return objc_getAssociatedObject(self, "JKR_UN_TOUCH_RECT") ? [objc_getAssociatedObject(self, "JKR_UN_TOUCH_RECT") CGRectValue] : CGRectZero;
+    return objc_getAssociatedObject(self, JKR_UN_TOUCH_RECT_KEY) ? [objc_getAssociatedObject(self, JKR_UN_TOUCH_RECT_KEY) CGRectValue] : CGRectZero;
 }
 
 - (BOOL)jkr_pointInside:(CGPoint)point withEvent:(UIEvent *)event {

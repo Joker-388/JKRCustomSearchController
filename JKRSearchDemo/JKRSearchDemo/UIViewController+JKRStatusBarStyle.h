@@ -1,9 +1,9 @@
 //
 //  UIViewController+JKRStatusBarStyle.h
-//  JKRSearchDemo
+//  JKRTest
 //
-//  Created by Joker on 2017/4/7.
-//  Copyright © 2017年 Lucky. All rights reserved.
+//  Created by Joker on 2016/5/7.
+//  Copyright © 2016年 Lucky. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
