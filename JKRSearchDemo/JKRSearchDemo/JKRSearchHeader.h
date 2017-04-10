@@ -49,5 +49,8 @@
 #import "UIView+JKRViewController.h"
 #import "UIView+JKR_Frame.h"
 #import "UIViewController+JKRStatusBarStyle.h"
+#import "UIView+JKRTouch.h"
+#import "UIView+JKRSubView.h"
+#import "UIGestureRecognizer+JKRTouch.h"
 
 #endif /* JKRSearchHeader_h */

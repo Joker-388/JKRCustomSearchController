@@ -24,6 +24,8 @@
 		F39AD48D1E9B188A003F2279 /* UIColor+JKRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F39AD48C1E9B188A003F2279 /* UIColor+JKRColor.m */; };
 		F39AD4901E9B1975003F2279 /* UIView+JKRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = F39AD48F1E9B1975003F2279 /* UIView+JKRTouch.m */; };
 		F39AD4931E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F39AD4921E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.m */; };
+		F39AD4A81E9B2922003F2279 /* UIView+JKRSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = F39AD4A71E9B2922003F2279 /* UIView+JKRSubView.m */; };
+		F39AD4AB1E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = F39AD4AA1E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.m */; };
 		F3E6A88F1E94D367008795DB /* UIView+JKRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A88E1E94D367008795DB /* UIView+JKRViewController.m */; };
 		F3E6A8951E94E838008795DB /* UIView+JKR_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A8941E94E838008795DB /* UIView+JKR_Frame.m */; };
 		F3E6A89B1E94FD30008795DB /* JKRSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E6A89A1E94FD30008795DB /* JKRSearchResultViewController.m */; };
@@ -89,6 +91,10 @@
 		F39AD48F1E9B1975003F2279 /* UIView+JKRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRTouch.m"; sourceTree = "<group>"; };
 		F39AD4911E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKRStatusBarStyle.h"; sourceTree = "<group>"; };
 		F39AD4921E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKRStatusBarStyle.m"; sourceTree = "<group>"; };
+		F39AD4A61E9B2922003F2279 /* UIView+JKRSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRSubView.h"; sourceTree = "<group>"; };
+		F39AD4A71E9B2922003F2279 /* UIView+JKRSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRSubView.m"; sourceTree = "<group>"; };
+		F39AD4A91E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+JKRTouch.h"; sourceTree = "<group>"; };
+		F39AD4AA1E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+JKRTouch.m"; sourceTree = "<group>"; };
 		F3E6A88D1E94D367008795DB /* UIView+JKRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRViewController.h"; sourceTree = "<group>"; };
 		F3E6A88E1E94D367008795DB /* UIView+JKRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRViewController.m"; sourceTree = "<group>"; };
 		F3E6A8931E94E838008795DB /* UIView+JKR_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKR_Frame.h"; sourceTree = "<group>"; };
@@ -230,6 +236,10 @@
 				055A06311E93B02E00025BDE /* AppDelegate+JKRRootViewController.m */,
 				F3E6A88D1E94D367008795DB /* UIView+JKRViewController.h */,
 				F3E6A88E1E94D367008795DB /* UIView+JKRViewController.m */,
+				F39AD4A61E9B2922003F2279 /* UIView+JKRSubView.h */,
+				F39AD4A71E9B2922003F2279 /* UIView+JKRSubView.m */,
+				F39AD4A91E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.h */,
+				F39AD4AA1E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.m */,
 				F3E6A8931E94E838008795DB /* UIView+JKR_Frame.h */,
 				F3E6A8941E94E838008795DB /* UIView+JKR_Frame.m */,
 			);
@@ -431,6 +441,7 @@
 			files = (
 				F39AD48D1E9B188A003F2279 /* UIColor+JKRColor.m in Sources */,
 				055A06021E93AD7800025BDE /* AppDelegate.m in Sources */,
+				F39AD4AB1E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.m in Sources */,
 				055A06411E93BB3F00025BDE /* JKRFindViewController.m in Sources */,
 				F3E6A89B1E94FD30008795DB /* JKRSearchResultViewController.m in Sources */,
 				055A063B1E93BB2000025BDE /* JKRTabBarController.m in Sources */,
@@ -439,6 +450,7 @@
 				F3F635261E9649AE0023D395 /* JKRTestViewController.m in Sources */,
 				F3FCB4B51E94A87E00BDBE36 /* JKRSearchController.m in Sources */,
 				F39AD4931E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.m in Sources */,
+				F39AD4A81E9B2922003F2279 /* UIView+JKRSubView.m in Sources */,
 				055A05FF1E93AD7800025BDE /* main.m in Sources */,
 				F3E6A88F1E94D367008795DB /* UIView+JKRViewController.m in Sources */,
 				055A06441E93BB4600025BDE /* JKRMeViewController.m in Sources */,

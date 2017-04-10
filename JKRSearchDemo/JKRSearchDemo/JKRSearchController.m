@@ -7,7 +7,6 @@
 //
 
 #import "JKRSearchController.h"
-#import "UIView+JKRTouch.h"
 
 NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
 
@@ -37,6 +36,8 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
 - (void)tapSearchBarAction {
     if ([self.delegate respondsToSelector:@selector(willPresentSearchController:)]) [self.delegate willPresentSearchController:self];
     self.searchBar.jkr_viewController.jkr_lightStatusBar = NO;
+    [self.searchBar addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handGesture)]];
+    [self.searchBar addGestureRecognizer:[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handGesture)]];
     [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self.view];
     if ([self.delegate respondsToSelector:@selector(didPresentSearchController:)]) [self.delegate didPresentSearchController:self];
     [self.searchBar setValue:@1 forKey:@"isEditing"];
@@ -50,6 +51,10 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
     }
 }
 
+- (void)handGesture {
+    
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"text"] && [self.searchResultsUpdater respondsToSelector:@selector(updateSearchResultsForSearchController:)]) {
         [self.searchResultsUpdater updateSearchResultsForSearchController:self];
@@ -59,6 +64,15 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
 - (void)endSearch {
     if ([self.delegate respondsToSelector:@selector(willDismissSearchController:)]) [self.delegate willDismissSearchController:self];
     self.searchBar.jkr_viewController.jkr_lightStatusBar = YES;
+    NSArray *searchBarGestures = self.searchBar.gestureRecognizers;
+    if (searchBarGestures.count == 3) {
+        [self.searchBar removeGestureRecognizer:searchBarGestures.lastObject];
+        [self.searchBar removeGestureRecognizer:searchBarGestures.lastObject];
+    }
+    if (searchBarGestures.count == 2) {
+        [self.searchBar removeGestureRecognizer:searchBarGestures.lastObject];
+    }
+    
     [self.view removeFromSuperview];
     if ([self.delegate respondsToSelector:@selector(didDismissSearchController:)]) [self.delegate didDismissSearchController:self];
     [self.searchBar setValue:@0 forKey:@"isEditing"];
