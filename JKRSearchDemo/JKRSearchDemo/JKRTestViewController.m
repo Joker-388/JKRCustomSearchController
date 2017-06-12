@@ -26,7 +26,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.navigationController pushViewController:[JKRRootViewController new] animated:YES];
+//    [self.navigationController pushViewController:[JKRRootViewController new] animated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
