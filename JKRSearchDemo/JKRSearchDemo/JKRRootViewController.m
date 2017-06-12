@@ -43,6 +43,10 @@ static NSString *const CellIdentifier = @"WEICHAT_ID";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Home click index: %zd", indexPath.row);
+}
+
 #pragma mark - JKRSearchControllerhResultsUpdating
 - (void)updateSearchResultsForSearchController:(JKRSearchController *)searchController {
     NSString *searchText = searchController.searchBar.text;

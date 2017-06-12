@@ -37,6 +37,10 @@ static NSString *const cellID = @"RESULT_CELL_ID";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"ResultTableView click index: %zd", indexPath.row);
+}
+
 - (void)dealloc {
     NSLog(@"JKRSearchResultViewController dealloc");
 }

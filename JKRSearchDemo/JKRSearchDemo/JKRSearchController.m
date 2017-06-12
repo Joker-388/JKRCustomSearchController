@@ -82,7 +82,7 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
     } 
 }
 
-- (void)endSearchTextFieldEditing {
+- (void)endSearchTextFieldEditing:(UITapGestureRecognizer *)sender {
     UITextField *searchTextField = [self.searchBar valueForKey:@"searchTextField"];
     [searchTextField resignFirstResponder];
 }
@@ -101,7 +101,9 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
         _bgView = [[UIView alloc] init];
         _bgView.frame = CGRectMake(0, CGRectGetMaxY(self.searchBar.frame) + 64, kScreenWidth, kScreenHeight - self.searchBar.frame.size.height);
         _bgView.backgroundColor = [UIColor lightGrayColor];
-        [_bgView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endSearchTextFieldEditing)]];
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endSearchTextFieldEditing:)];
+        tapGestureRecognizer.cancelsTouchesInView = NO;
+        [_bgView addGestureRecognizer:tapGestureRecognizer];
     }
     return _bgView;
 }
