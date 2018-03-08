@@ -139,6 +139,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05479D252050ED0B00949C78 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				055A06391E93BB2000025BDE /* JKRTabBarController.h */,
+				055A063A1E93BB2000025BDE /* JKRTabBarController.m */,
+				055A06331E93B08A00025BDE /* JKRNavigationViewController.h */,
+				055A06341E93B08A00025BDE /* JKRNavigationViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		05479D262050ED2000949C78 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				055A06361E93B09E00025BDE /* JKRRootViewController.h */,
+				055A06371E93B09E00025BDE /* JKRRootViewController.m */,
+				F3E6A8991E94FD30008795DB /* JKRSearchResultViewController.h */,
+				F3E6A89A1E94FD30008795DB /* JKRSearchResultViewController.m */,
+				F3F635241E9649AE0023D395 /* JKRTestViewController.h */,
+				F3F635251E9649AE0023D395 /* JKRTestViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		05479D272050ED6200949C78 /* SearchController */ = {
+			isa = PBXGroup;
+			children = (
+				F3FCB4B31E94A87E00BDBE36 /* JKRSearchController.h */,
+				F3FCB4B41E94A87E00BDBE36 /* JKRSearchController.m */,
+				F3FCB4B01E94A82C00BDBE36 /* JKRSearchBar.h */,
+				F3FCB4B11E94A82C00BDBE36 /* JKRSearchBar.m */,
+				F3FCB4B91E94BE3500BDBE36 /* JKRSearchTextField.h */,
+				F3FCB4BA1E94BE3500BDBE36 /* JKRSearchTextField.m */,
+			);
+			path = SearchController;
+			sourceTree = "<group>";
+		};
+		05479D282050ED8C00949C78 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				055A063C1E93BB3400025BDE /* JKRContactsViewController.h */,
+				055A063D1E93BB3400025BDE /* JKRContactsViewController.m */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		05479D292050ED9F00949C78 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				055A063F1E93BB3F00025BDE /* JKRFindViewController.h */,
+				055A06401E93BB3F00025BDE /* JKRFindViewController.m */,
+			);
+			path = Find;
+			sourceTree = "<group>";
+		};
+		05479D2A2050EDB400949C78 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				055A06421E93BB4600025BDE /* JKRMeViewController.h */,
+				055A06431E93BB4600025BDE /* JKRMeViewController.m */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		05479D2B2050EDD300949C78 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F39AD4911E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.h */,
+				F39AD4921E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.m */,
+				F39AD48E1E9B1975003F2279 /* UIView+JKRTouch.h */,
+				F39AD48F1E9B1975003F2279 /* UIView+JKRTouch.m */,
+				F39AD48B1E9B188A003F2279 /* UIColor+JKRColor.h */,
+				F39AD48C1E9B188A003F2279 /* UIColor+JKRColor.m */,
+				055A06461E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.h */,
+				055A06471E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m */,
+				055A06301E93B02E00025BDE /* AppDelegate+JKRRootViewController.h */,
+				055A06311E93B02E00025BDE /* AppDelegate+JKRRootViewController.m */,
+				F3E6A88D1E94D367008795DB /* UIView+JKRViewController.h */,
+				F3E6A88E1E94D367008795DB /* UIView+JKRViewController.m */,
+				F39AD4A61E9B2922003F2279 /* UIView+JKRSubView.h */,
+				F39AD4A71E9B2922003F2279 /* UIView+JKRSubView.m */,
+				F39AD4A91E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.h */,
+				F39AD4AA1E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.m */,
+				F3E6A8931E94E838008795DB /* UIView+JKR_Frame.h */,
+				F3E6A8941E94E838008795DB /* UIView+JKR_Frame.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		05479D2C2050EDE800949C78 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3E6A89E1E94FF3B008795DB /* JKRDataStore.h */,
+				F3E6A89F1E94FF3B008795DB /* JKRDataStore.m */,
+				F3E6A89C1E94FD3A008795DB /* country.txt */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		055A05F11E93AD7800025BDE = {
 			isa = PBXGroup;
 			children = (
@@ -165,17 +264,16 @@
 				055A06451E93BD4100025BDE /* JKRSearchHeader.h */,
 				055A06001E93AD7800025BDE /* AppDelegate.h */,
 				055A06011E93AD7800025BDE /* AppDelegate.m */,
-				F3E6A8A81E9501B1008795DB /* Main */,
-				F3E6A8A71E95019D008795DB /* Home */,
-				F3E6A8A11E950159008795DB /* SearchController */,
-				F3E6A8A41E950184008795DB /* Contacts */,
-				F3E6A8A51E950191008795DB /* Find */,
-				F3E6A8A61E950197008795DB /* Me */,
-				F3E6A8A21E95016A008795DB /* Category */,
-				F3E6A8A31E95017B008795DB /* Data */,
+				05479D252050ED0B00949C78 /* Main */,
+				05479D262050ED2000949C78 /* Home */,
+				05479D272050ED6200949C78 /* SearchController */,
+				05479D282050ED8C00949C78 /* Contacts */,
+				05479D292050ED9F00949C78 /* Find */,
+				05479D2A2050EDB400949C78 /* Me */,
+				05479D2B2050EDD300949C78 /* Category */,
+				05479D2C2050EDE800949C78 /* Data */,
 				055A06091E93AD7800025BDE /* Assets.xcassets */,
 				055A060B1E93AD7800025BDE /* LaunchScreen.storyboard */,
-				F3E6A89C1E94FD3A008795DB /* country.txt */,
 				055A060E1E93AD7800025BDE /* Info.plist */,
 				055A05FD1E93AD7800025BDE /* Supporting Files */,
 			);
@@ -206,104 +304,6 @@
 				055A06241E93AD7800025BDE /* Info.plist */,
 			);
 			path = JKRSearchDemoUITests;
-			sourceTree = "<group>";
-		};
-		F3E6A8A11E950159008795DB /* SearchController */ = {
-			isa = PBXGroup;
-			children = (
-				F3FCB4B31E94A87E00BDBE36 /* JKRSearchController.h */,
-				F3FCB4B41E94A87E00BDBE36 /* JKRSearchController.m */,
-				F3FCB4B01E94A82C00BDBE36 /* JKRSearchBar.h */,
-				F3FCB4B11E94A82C00BDBE36 /* JKRSearchBar.m */,
-				F3FCB4B91E94BE3500BDBE36 /* JKRSearchTextField.h */,
-				F3FCB4BA1E94BE3500BDBE36 /* JKRSearchTextField.m */,
-			);
-			name = SearchController;
-			sourceTree = "<group>";
-		};
-		F3E6A8A21E95016A008795DB /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				F39AD4911E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.h */,
-				F39AD4921E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.m */,
-				F39AD48E1E9B1975003F2279 /* UIView+JKRTouch.h */,
-				F39AD48F1E9B1975003F2279 /* UIView+JKRTouch.m */,
-				F39AD48B1E9B188A003F2279 /* UIColor+JKRColor.h */,
-				F39AD48C1E9B188A003F2279 /* UIColor+JKRColor.m */,
-				055A06461E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.h */,
-				055A06471E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m */,
-				055A06301E93B02E00025BDE /* AppDelegate+JKRRootViewController.h */,
-				055A06311E93B02E00025BDE /* AppDelegate+JKRRootViewController.m */,
-				F3E6A88D1E94D367008795DB /* UIView+JKRViewController.h */,
-				F3E6A88E1E94D367008795DB /* UIView+JKRViewController.m */,
-				F39AD4A61E9B2922003F2279 /* UIView+JKRSubView.h */,
-				F39AD4A71E9B2922003F2279 /* UIView+JKRSubView.m */,
-				F39AD4A91E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.h */,
-				F39AD4AA1E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.m */,
-				F3E6A8931E94E838008795DB /* UIView+JKR_Frame.h */,
-				F3E6A8941E94E838008795DB /* UIView+JKR_Frame.m */,
-			);
-			name = Category;
-			sourceTree = "<group>";
-		};
-		F3E6A8A31E95017B008795DB /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				F3E6A89E1E94FF3B008795DB /* JKRDataStore.h */,
-				F3E6A89F1E94FF3B008795DB /* JKRDataStore.m */,
-			);
-			name = Data;
-			sourceTree = "<group>";
-		};
-		F3E6A8A41E950184008795DB /* Contacts */ = {
-			isa = PBXGroup;
-			children = (
-				055A063C1E93BB3400025BDE /* JKRContactsViewController.h */,
-				055A063D1E93BB3400025BDE /* JKRContactsViewController.m */,
-			);
-			name = Contacts;
-			sourceTree = "<group>";
-		};
-		F3E6A8A51E950191008795DB /* Find */ = {
-			isa = PBXGroup;
-			children = (
-				055A063F1E93BB3F00025BDE /* JKRFindViewController.h */,
-				055A06401E93BB3F00025BDE /* JKRFindViewController.m */,
-			);
-			name = Find;
-			sourceTree = "<group>";
-		};
-		F3E6A8A61E950197008795DB /* Me */ = {
-			isa = PBXGroup;
-			children = (
-				055A06421E93BB4600025BDE /* JKRMeViewController.h */,
-				055A06431E93BB4600025BDE /* JKRMeViewController.m */,
-			);
-			name = Me;
-			sourceTree = "<group>";
-		};
-		F3E6A8A71E95019D008795DB /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				055A06361E93B09E00025BDE /* JKRRootViewController.h */,
-				055A06371E93B09E00025BDE /* JKRRootViewController.m */,
-				F3E6A8991E94FD30008795DB /* JKRSearchResultViewController.h */,
-				F3E6A89A1E94FD30008795DB /* JKRSearchResultViewController.m */,
-				F3F635241E9649AE0023D395 /* JKRTestViewController.h */,
-				F3F635251E9649AE0023D395 /* JKRTestViewController.m */,
-			);
-			name = Home;
-			sourceTree = "<group>";
-		};
-		F3E6A8A81E9501B1008795DB /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				055A06391E93BB2000025BDE /* JKRTabBarController.h */,
-				055A063A1E93BB2000025BDE /* JKRTabBarController.m */,
-				055A06331E93B08A00025BDE /* JKRNavigationViewController.h */,
-				055A06341E93B08A00025BDE /* JKRNavigationViewController.m */,
-			);
-			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
