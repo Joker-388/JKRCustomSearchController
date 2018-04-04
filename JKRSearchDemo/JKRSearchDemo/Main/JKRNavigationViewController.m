@@ -17,9 +17,7 @@
 
 + (void)initialize {
     UINavigationBar *navigationBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[self class]]];
-    [navigationBar setBackgroundImage:[UIImage imageNamed:@"Navbar"] forBarMetrics:UIBarMetricsDefault];
-    navigationBar.shadowImage = [UIImage new];
-    navigationBar.jkrBackroundColor = JKRColor(74, 74, 74, 1.0);
+    navigationBar.barTintColor = JKRColor(51, 51, 51, 1.0);
     navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 }
 

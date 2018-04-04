@@ -8,6 +8,11 @@
 
 #import "JKRSearchController.h"
 
+#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125,2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+/// navigaionbar高度
+#define kSafeAreaNavHeight (([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125,2436), [[UIScreen mainScreen] currentMode].size) : NO) ? 88 : 64)
+
 NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
 
 @interface JKRSearchController ()
@@ -27,7 +32,7 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.bgView];
-    self.view.unTouchRect = CGRectMake(0, 0, self.view.width, 64);
+    self.view.unTouchRect = CGRectMake(0, 0, self.view.width, kSafeAreaNavHeight);
     self.searchResultsController.view.frame = self.bgView.bounds;
     [self.bgView addSubview:self.searchResultsController.view];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endSearch) name:SEARCH_CANCEL_NOTIFICATION_KEY object:nil];
@@ -44,7 +49,7 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
     if (self.searchBar.jkr_viewController.parentViewController && [self.searchBar.jkr_viewController.parentViewController isKindOfClass:[UINavigationController class]] && self.hidesNavigationBarDuringPresentation) {
         [(UINavigationController *)self.searchBar.jkr_viewController.parentViewController setNavigationBarHidden:YES animated:YES];
         [UIView animateWithDuration:0.2 animations:^{
-            self.bgView.y = 64;
+            self.bgView.y = kSafeAreaNavHeight;
         }];
     } else {
         
@@ -78,7 +83,7 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
     [self.searchBar setValue:@0 forKey:@"isEditing"];
     if (self.searchBar.jkr_viewController.parentViewController && [self.searchBar.jkr_viewController.parentViewController isKindOfClass:[UINavigationController class]] && self.hidesNavigationBarDuringPresentation) {
         [(UINavigationController *)self.searchBar.jkr_viewController.parentViewController setNavigationBarHidden:NO animated:YES];
-        self.bgView.y = CGRectGetMaxY(self.searchBar.frame) + 64;
+        self.bgView.y = CGRectGetMaxY(self.searchBar.frame) + kSafeAreaNavHeight;
     } 
 }
 
@@ -99,7 +104,7 @@ NSString *SEARCH_CANCEL_NOTIFICATION_KEY = @"SEARCH_CANCEL_NOTIFICATION_KEY";
 - (UIView *)bgView {
     if (!_bgView) {
         _bgView = [[UIView alloc] init];
-        _bgView.frame = CGRectMake(0, CGRectGetMaxY(self.searchBar.frame) + 64, kScreenWidth, kScreenHeight - self.searchBar.frame.size.height);
+        _bgView.frame = CGRectMake(0, CGRectGetMaxY(self.searchBar.frame) + kSafeAreaNavHeight, kScreenWidth, kScreenHeight - self.searchBar.frame.size.height - (iPhoneX ? 44 : 20));
         _bgView.backgroundColor = [UIColor lightGrayColor];
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endSearchTextFieldEditing:)];
         tapGestureRecognizer.cancelsTouchesInView = NO;
