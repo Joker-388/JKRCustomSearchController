@@ -11,6 +11,8 @@
 #import "JKRSearchResultViewController.h"
 #import "JKRDataStore.h"
 
+#define kSafeAreaNavHeight (([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125,2436), [[UIScreen mainScreen] currentMode].size) : NO) ? 88 : 64)
+
 @interface JKRRootViewController ()<UITableViewDataSource, UITableViewDelegate, JKRSearchControllerhResultsUpdating, JKRSearchControllerDelegate, JKRSearchBarDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -45,6 +47,28 @@ static NSString *const CellIdentifier = @"WEICHAT_ID";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"Home click index: %zd", indexPath.row);
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGFloat y = scrollView.contentOffset.y;
+    if (y < - kSafeAreaNavHeight + self.searchController.searchBar.height) {
+        if (y < - kSafeAreaNavHeight + self.searchController.searchBar.height * 0.5) {
+            [self.tableView setContentOffset:CGPointMake(0, - kSafeAreaNavHeight) animated:YES];
+        } else {
+            [self.tableView setContentOffset:CGPointMake(0, - kSafeAreaNavHeight + self.searchController.searchBar.height) animated:YES];
+        }
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    CGFloat y = scrollView.contentOffset.y;
+    if (y < - kSafeAreaNavHeight + self.searchController.searchBar.height) {
+        if (y < - kSafeAreaNavHeight + self.searchController.searchBar.height * 0.5) {
+            [self.tableView setContentOffset:CGPointMake(0, - kSafeAreaNavHeight) animated:YES];
+        } else {
+            [self.tableView setContentOffset:CGPointMake(0, - kSafeAreaNavHeight + self.searchController.searchBar.height) animated:YES];
+        }
+    }
 }
 
 #pragma mark - JKRSearchControllerhResultsUpdating
