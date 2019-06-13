@@ -125,7 +125,7 @@ static NSString *const CellIdentifier = @"WEICHAT_ID";
     if (!_searchController) {
         JKRSearchResultViewController *resultSearchController = [[JKRSearchResultViewController alloc] init];
         _searchController = [[JKRSearchController alloc] initWithSearchResultsController:resultSearchController];
-        _searchController.searchBar.placeholder = @"搜索";
+        _searchController.searchBar.placeholder = @"搜索条件比较长。。。";
         _searchController.hidesNavigationBarDuringPresentation = YES;
         _searchController.searchResultsUpdater = self;
         _searchController.searchBar.delegate = self;

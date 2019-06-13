@@ -21,6 +21,7 @@
 		055A06411E93BB3F00025BDE /* JKRFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055A06401E93BB3F00025BDE /* JKRFindViewController.m */; };
 		055A06441E93BB4600025BDE /* JKRMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055A06431E93BB4600025BDE /* JKRMeViewController.m */; };
 		055A06481E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 055A06471E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m */; };
+		EFDC9E6E22AF3F77009C8157 /* NSString+DCFontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDC9E6D22AF3F77009C8157 /* NSString+DCFontSize.m */; };
 		F39AD48D1E9B188A003F2279 /* UIColor+JKRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F39AD48C1E9B188A003F2279 /* UIColor+JKRColor.m */; };
 		F39AD4901E9B1975003F2279 /* UIView+JKRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = F39AD48F1E9B1975003F2279 /* UIView+JKRTouch.m */; };
 		F39AD4931E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F39AD4921E9B1991003F2279 /* UIViewController+JKRStatusBarStyle.m */; };
@@ -85,6 +86,8 @@
 		055A06451E93BD4100025BDE /* JKRSearchHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRSearchHeader.h; sourceTree = "<group>"; };
 		055A06461E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+JKR_BackgroundColor.h"; sourceTree = "<group>"; };
 		055A06471E93C44300025BDE /* UINavigationBar+JKR_BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JKR_BackgroundColor.m"; sourceTree = "<group>"; };
+		EFDC9E6C22AF3F77009C8157 /* NSString+DCFontSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+DCFontSize.h"; sourceTree = "<group>"; };
+		EFDC9E6D22AF3F77009C8157 /* NSString+DCFontSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+DCFontSize.m"; sourceTree = "<group>"; };
 		F39AD48B1E9B188A003F2279 /* UIColor+JKRColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JKRColor.h"; sourceTree = "<group>"; };
 		F39AD48C1E9B188A003F2279 /* UIColor+JKRColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JKRColor.m"; sourceTree = "<group>"; };
 		F39AD48E1E9B1975003F2279 /* UIView+JKRTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRTouch.h"; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 				F39AD4AA1E9B2A96003F2279 /* UIGestureRecognizer+JKRTouch.m */,
 				F3E6A8931E94E838008795DB /* UIView+JKR_Frame.h */,
 				F3E6A8941E94E838008795DB /* UIView+JKR_Frame.m */,
+				EFDC9E6C22AF3F77009C8157 /* NSString+DCFontSize.h */,
+				EFDC9E6D22AF3F77009C8157 /* NSString+DCFontSize.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				TargetAttributes = {
 					055A05F91E93AD7800025BDE = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = U3QZXY69QQ;
 						ProvisioningStyle = Automatic;
 					};
 					055A06121E93AD7800025BDE = {
@@ -476,6 +482,7 @@
 				055A063E1E93BB3400025BDE /* JKRContactsViewController.m in Sources */,
 				055A06381E93B09E00025BDE /* JKRRootViewController.m in Sources */,
 				F3E6A8A01E94FF3B008795DB /* JKRDataStore.m in Sources */,
+				EFDC9E6E22AF3F77009C8157 /* NSString+DCFontSize.m in Sources */,
 				055A06321E93B02E00025BDE /* AppDelegate+JKRRootViewController.m in Sources */,
 				F3E6A8951E94E838008795DB /* UIView+JKR_Frame.m in Sources */,
 				F39AD4901E9B1975003F2279 /* UIView+JKRTouch.m in Sources */,
@@ -619,6 +626,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U3QZXY69QQ;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = JKRSearchDemo/JKRSearchHeader.h;
 				INFOPLIST_FILE = JKRSearchDemo/Info.plist;
@@ -632,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U3QZXY69QQ;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = JKRSearchDemo/JKRSearchHeader.h;
 				INFOPLIST_FILE = JKRSearchDemo/Info.plist;

@@ -8,6 +8,7 @@
 
 #import "JKRSearchBar.h"
 #import "JKRSearchTextField.h"
+#import "NSString+DCFontSize.h"
 
 UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
 
@@ -18,6 +19,8 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
 @property (nonatomic, assign) BOOL isEditing;
 @property (nonatomic, strong) UIButton *rightButton;
 @property (nonatomic, strong) UIButton *cancelButton;
+
+@property (nonatomic, assign) CGFloat placeholderW;
 
 @end
 
@@ -42,9 +45,7 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
             self.rightButton.x = kScreenWidth - 38 - 40;
             self.backgroundImageView.width = kScreenWidth - 20 - 40;
             self.cancelButton.x = kScreenWidth - 40;
-        } completion:^(BOOL finished) {
-            self.searchTextField.width = kScreenWidth - 20 - 38 - 40;
-        }];
+        } completion:nil];
         self.searchTextField.canTouch = YES;
         [self.searchTextField becomeFirstResponder];
     } else {
@@ -53,13 +54,11 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
         [_rightButton setImage:[UIImage imageNamed:@"VoiceSearchStartBtn"] forState:UIControlStateNormal];
         [_rightButton setImage:[UIImage imageNamed:@"VoiceSearchStartBtnHL"] forState:UIControlStateHighlighted];
         [UIView animateWithDuration:0.2 animations:^{
-            self.searchTextField.x = kScreenWidth * 0.5 - 40;
+            self.searchTextField.x = (kScreenWidth - self.placeholderW) * 0.5;
             self.rightButton.x = kScreenWidth - 38;
             self.backgroundImageView.width = kScreenWidth - 20;
             self.cancelButton.x = kScreenWidth;
-        } completion:^(BOOL finished) {
-            self.searchTextField.width = kScreenWidth * 0.5 + 20 - 38;
-        }];
+        } completion:nil];
         self.searchTextField.canTouch = NO;
         [self.searchTextField resignFirstResponder];
     }
@@ -72,20 +71,21 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    
+    if (self.searchTextField.text.length == 0) return YES;
+    [self setUpdatePlaceholderSize]; // 因为要居中得重写计算size
     [UIView animateWithDuration:0.3 animations:^{
-        self.searchTextField.x = kScreenWidth * 0.5 - 40;
-    } completion:^(BOOL finished) {
-        self.searchTextField.width = kScreenWidth * 0.5 + 20 - 38 - 40;
-    }];
+        self.searchTextField.x = (kScreenWidth - self.placeholderW) * 0.5;
+    } completion:nil];
     return YES;
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
     [UIView animateWithDuration:0.3 animations:^{
+        [self layoutIfNeeded];
         self.searchTextField.x = 10;
-    } completion:^(BOOL finished) {
-        self.searchTextField.width = kScreenWidth - 20 - 38 - 40;
-    }];
+    } completion:nil];
     return YES;
 }
 
@@ -110,15 +110,20 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
 }
 
 - (void)cancelButtonClick {
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:SEARCH_CANCEL_NOTIFICATION_KEY object:nil];
 }
 
 - (void)rightButtonClick {
+    
     if (self.searchTextField.text) {
         self.searchTextField.text = @"";
         self.text = nil;
         [_rightButton setImage:[UIImage imageNamed:@"VoiceSearchStartBtn"] forState:UIControlStateNormal];
         [_rightButton setImage:[UIImage imageNamed:@"VoiceSearchStartBtnHL"] forState:UIControlStateHighlighted];
+        if (_isEditing) {
+            self.searchTextField.x = 10;
+        }
     }
 }
 
@@ -128,7 +133,11 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    
     self.searchTextField.placeholder = self.placeholder;
+    
+    [self setUpdatePlaceholderSize];
+    _searchTextField.frame = CGRectMake((kScreenWidth - self.placeholderW) * 0.5, 0, (!_isEditing) ? self.placeholderW : kScreenWidth - 20 - 38 - 40, 44);
 }
 
 - (UIImageView *)backgroundImageView {
@@ -141,7 +150,7 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
 
 - (UITextField *)searchTextField {
     if (!_searchTextField) {
-        _searchTextField = [[JKRSearchTextField alloc] initWithFrame:CGRectMake(kScreenWidth * 0.5 - 40, 0, kScreenWidth * 0.5 + 20 - 38, 44)];
+        _searchTextField = [[JKRSearchTextField alloc] initWithFrame:CGRectZero];
         _searchTextField.canTouch = NO;
         UIImageView *searchIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SearchContactsBarIcon"]];
         searchIcon.contentMode = UIViewContentModeScaleAspectFit;
@@ -176,6 +185,15 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
         [_cancelButton addTarget:self action:@selector(cancelButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
+}
+
+
+#pragma mark - 更新输入框尺寸
+- (void)setUpdatePlaceholderSize
+{
+    NSString *content = (self.searchTextField.text.length == 0) ? self.searchTextField.placeholder : self.searchTextField.text;
+    CGSize placeholderSize = [NSString dcSizeWithString:content Font:_searchTextField.font MaxSize:CGSizeMake(MAXFLOAT, 44)];
+    self.placeholderW = placeholderSize.width + 30;
 }
 
 - (void)dealloc {
