@@ -121,7 +121,9 @@ UIKIT_EXTERN NSString *SEARCH_CANCEL_NOTIFICATION_KEY;
         self.text = nil;
         [_rightButton setImage:[UIImage imageNamed:@"VoiceSearchStartBtn"] forState:UIControlStateNormal];
         [_rightButton setImage:[UIImage imageNamed:@"VoiceSearchStartBtnHL"] forState:UIControlStateHighlighted];
-        self.searchTextField.x = 10;
+        if (_isEditing) {
+            self.searchTextField.x = 10;
+        }
     }
 }
 
